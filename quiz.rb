@@ -2,8 +2,19 @@ class Quiz
     puts "#{"*" * 5} Welcome to Rad's Quiz Game! #{"*" * 5}"
     puts "\n"
 
-    def score 
-        
+end
+
+class Score
+    def initialize
+        @score = 0
+    end
+
+    def increase_score
+        score += 1
+    end
+
+    def decrease_score
+        score -= 1
     end
 end
 
@@ -12,6 +23,3 @@ class Questions
     puts "\n"
 end
 
-class Quiz 
-    puts "Editing Quiz class in another class instance"
-end
