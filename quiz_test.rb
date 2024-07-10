@@ -1,7 +1,7 @@
 require 'quiz'
 
 RSpec.describe Quiz do
-    describe "initial log" do
+    describe "Quiz Class" do
         it "displays the welcome message" do
 
         end
@@ -11,7 +11,7 @@ RSpec.describe Quiz do
         end
     end
     
-    describe "correct answer" do
+    describe "Score Class" do
         it "displays correct answer message" do
 
         end
@@ -29,7 +29,7 @@ RSpec.describe Quiz do
         end
     end
 
-    describe "wrong answer" do
+    describe "Questions Class" do
         it "displays wrong answer message" do
 
         end
