@@ -3,7 +3,7 @@ require 'quiz'
 RSpec.describe Quiz do
     describe "Quiz Class" do
         it "displays the welcome message" do
-
+            
         end
 
         it "displays the first quiz question" do
