@@ -2,21 +2,21 @@ require 'quiz'
 
 RSpec.describe Quiz do
     describe "Quiz Class" do
-        it "displays the welcome message" do
+        it "displays the welcome message when the program starts" do
             
         end
 
-        it "displays the first quiz question" do
+        it "displays the first quiz question when the program starts" do
 
         end
     end
     
     describe "Score Class" do
-        it "displays correct answer message" do
+        it "the score count increases by 1" do
 
         end
 
-        it "the score count increases by 1" do
+        it "displays correct answer message" do
 
         end
 
