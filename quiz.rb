@@ -58,7 +58,6 @@ class Questions
         puts "Incorrect. The correct answer is: #{answer}"
       end
       
-      
       puts "Current Score: #{@score.score}"
       puts "\n"
     end
