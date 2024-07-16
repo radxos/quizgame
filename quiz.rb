@@ -1,8 +1,17 @@
 class Quiz
   def initialize
     puts "#{'*' * 5} Welcome to Rad's Quiz Game! #{'*' * 5}"
+    puts "\n"
+
     puts "This Quiz has 8 Questions"
     puts "\n"
+
+    score = Score.new
+    puts "Current Score: #{score.score}"
+    puts "\n"
+
+    questions = Questions.new
+    questions.display_question
   end
 end
 
@@ -13,10 +22,6 @@ class Score
 
   def increase_score
     @score += 1
-  end
-
-  def decrease_score
-    @score -= 1
   end
 
   def score
@@ -45,25 +50,21 @@ class Questions
       user_answer = gets.chomp
       
       if user_answer.downcase == answer.downcase
+        puts "\n"
         puts "Correct!"
         @score.increase_score
       else
+        puts "\n"
         puts "Incorrect. The correct answer is: #{answer}"
       end
       
-      puts "\n"
+      
       puts "Current Score: #{@score.score}"
       puts "\n"
     end
 
-    puts "End of Quiz!"
+    puts "End of Quiz! Thank you for playing!"
   end
 end
 
 quiz = Quiz.new
-
-score = Score.new
-puts "Current Score: #{score.score}"
-
-questions = Questions.new
-questions.display_question
