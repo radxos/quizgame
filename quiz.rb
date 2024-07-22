@@ -11,7 +11,29 @@ class Quiz
     puts "\n"
 
     questions = Questions.new
-    questions.display_question
+    @questions = questions.questions
+
+    display_questions
+  end
+
+  def display_questions
+    score = Score.new
+    @questions.each do |question, answer|
+      puts "Q: #{question}"
+      user_answer = gets.chomp
+      
+      if user_answer.downcase == answer.downcase
+        puts "\nCorrect!"
+        score.increase_score  # Increase score on correct answer
+      else
+        puts "\nIncorrect. The correct answer is: #{answer}"
+      end
+      
+      puts "Current Score: #{score.score}"
+      puts "\n"
+    end
+
+    puts "End of Quiz! Thank you for playing! You scored #{score.score} out of 8."
   end
 end
 
@@ -30,6 +52,8 @@ class Score
 end
 
 class Questions
+  attr_reader :questions
+
   def initialize
     @questions = {
       '1. Who wrote the novel "1984"?': 'George Orwell',
@@ -41,28 +65,6 @@ class Questions
       '7. Which planet is known as the "Red Planet"?': 'Mars',
       '8. Who discovered electricity?': 'Benjamin Franklin'
     }
-    @score = Score.new
-  end
-  
-  def display_question
-    @questions.each do |question, answer|
-      puts "Q: #{question}"
-      user_answer = gets.chomp
-      
-      if user_answer.downcase == answer.downcase
-        puts "\n"
-        puts "Correct!"
-        @score.increase_score
-      else
-        puts "\n"
-        puts "Incorrect. The correct answer is: #{answer}"
-      end
-      
-      puts "Current Score: #{@score.score}"
-      puts "\n"
-    end
-
-    puts "End of Quiz! Thank you for playing!"
   end
 end
 

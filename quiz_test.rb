@@ -1,45 +1,64 @@
-require 'quiz'
+# require 'quiz'
 
-RSpec.describe Quiz do
-    describe "Quiz Class" do
-        it "displays the welcome message when the program starts" do
+# RSpec.describe Quiz do
+#     describe "Quiz Class" do
+#         it "displays the welcome message when the program starts" do
             
-        end
+#         end
 
-        it "displays the first quiz question when the program starts" do
+#         it "displays the first quiz question when the program starts" do
 
-        end
-    end
+#         end
+#     end
     
-    describe "Score Class" do
-        it "the score count increases by 1" do
+#     describe "Score Class" do
+#         it "the score count increases by 1" do
 
-        end
+#         end
 
-        it "displays correct answer message" do
+#         it "displays correct answer message" do
 
-        end
+#         end
 
-        it "displays the next question" do
+#         it "displays the next question" do
 
-        end
+#         end
 
-        it "displays the quiz end message and score after all answers submitted" do
+#         it "displays the quiz end message and score after all answers submitted" do
 
-        end
+#         end
+#     end
+
+#     describe "Questions Class" do
+#         it "displays wrong answer message" do
+
+#         end
+
+#         it "the score count remains the same" do
+
+#         end
+
+#         it "displays the next question" do
+
+#         end
+#     end
+# end
+
+require_relative '../score'
+
+RSpec.describe Score do
+  describe '#initialize' do
+    it 'sets the initial score to zero' do
+      score = Score.new
+      expect(score.score).to eq(0)
     end
+  end
 
-    describe "Questions Class" do
-        it "displays wrong answer message" do
-
-        end
-
-        it "the score count remains the same" do
-
-        end
-
-        it "displays the next question" do
-
-        end
+  describe '#increase_score' do
+    it 'increases the score by 1' do
+      score = Score.new
+      score.increase_score
+      expect(score.score).to eq(1)
     end
+  end
 end
